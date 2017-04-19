@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Checkout</title>
+    <!-- Custom Theme files -->
+    <meta name="viewport" content="width=device-width, initial-scale=1"></meta>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"></meta>
+    <meta name="keywords" content=""></meta>
+    <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+    <!-- //Custom Theme files -->
+
+    <script src="http://cdn.bootcss.com/jquery/1.7.2/jquery.min.js"></script>
+    <link href="http://cdn.bootcss.com/bootstrap/3.1.1/css/bootstrap.min.css" rel="stylesheet"></link>
+    <script src="http://cdn.bootcss.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+    <link href="css/style.css" type="text/css" rel="stylesheet" media="all"></link>
+    <!-- js -->
+
+    <link href="http://cdn.bootcss.com/toastr.js/latest/toastr.min.css" rel="stylesheet"></link>
+    <script src="http://cdn.bootcss.com/toastr.js/latest/toastr.min.js"></script>
+    <!-- //js -->
+    <!-- cart -->
+    <script src="js/simpleCart.min.js"> </script>
+    <script src="js/createCart.js"></script>
+    <script src="js/logout.js"></script>
+    <!-- cart -->
+</head>
+<body>
+<!--header-->
+<div class="header">
+    <div class="container">
+        <nav class="navbar navbar-default" role="navigation" style="width:76%">
+            <div class="navbar-header">
+                <h1 class="navbar-brand"><a  href=".">DDBuy</a></h1>
+            </div>
+            <!--navbar-header-->
+
+        </nav>
+        <div class="header-info">
+            <div class="header-right search-box">
+                <a href="#"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></a>
+                <div class="search">
+                    <form class="navbar-form" action="products">
+                        <input type="text" name="keyword" class="form-control"></input>
+                        <input type="text" name="page" class="form-control" value="1" style="display:none"></input>
+                        <button type="submit" class="btn btn-default" aria-label="Left Align">
+                            搜索
+                        </button>
+                    </form>
+                </div>
+            </div>
+            <div class="header-right login">
+                <a href="order"><span class="glyphicon glyphicon-user" aria-hidden="true"></span></a>
+            </div>
+            <div class="header-right cart">
+                <a href="shopCart"><span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span></a>
+            </div>
+            <div class="header-right cart" style="display: none;" id="logout">
+                <a href="logout"><span class="glyphicon glyphicon-log-out" aria-hidden="true" ></span></a>
+            </div>
+        </div>
+        <div class="clearfix"> </div>
+    </div>
+</div>
+<!--//header-->
+<!--cart-items-->
+<div class="cart-items">
+    <div class="container" >
+        <div id="cartItemContainer"></div>
+
+    </div>
+</div>
+<!--//checkout-->
+<!--footer-->
+<div class="footer">
+    <div class="container">
+        <div class="footer-grids">
+            <div class="col-md-2 footer-grid">
+                <h4>公司</h4>
+                <ul>
+                    <li><a href="products.html">产品</a></li>
+                    <li><a href="#">团队</a></li>
+                    <li><a href="#">大事件</a></li>
+                </ul>
+            </div>
+            <div class="col-md-2 footer-grid">
+                <h4>服务</h4>
+                <ul>
+                    <li><a href="#">支持</a></li>
+                    <li><a href="#">返修</a></li>
+                    <li><a href="contact.html">联系客服</a></li>
+                </ul>
+            </div>
+            <div class="col-md-3 footer-grid">
+                <h4>订单及退货</h4>
+                <ul>
+                    <li><a href="#">订单状态</a></li>
+                    <li><a href="#">购买服务条款</a></li>
+                    <li><a href="#">退货服务条款</a></li>
+                </ul>
+            </div>
+            <div class="col-md-2 footer-grid">
+                <h4>法律信息</h4>
+                <ul>
+                    <li><a href="#">隐私条款</a></li>
+                    <li><a href="#">社会责任条款</a></li>
+                </ul>
+            </div>
+            <div class="col-md-3 footer-grid icons">
+                <h4>联系我们</h4>
+                <ul>
+                    <li><a href="#"><img src="images/i1.png" alt=""></img>Facebook</a></li>
+                    <li><a href="#"><img src="images/i2.png" alt=""></img>Twitter</a></li>
+                    <li><a href="#"><img src="images/i3.png" alt=""></img>Google-plus</a></li>
+                    <li><a href="#"><img src="images/i4.png" alt=""></img>Pinterest</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="clearfix"></div>
+    </div>
+</div>
+<!--footer-->
+<div class="footer-bottom">
+    <div class="container">
+        <p>Copyright &copy; 2015.DDBuy All rights reserved.</p>
+    </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>商品详情</title>
+    <!-- Custom Theme files -->
+    <meta name="viewport" content="width=device-width, initial-scale=1"></meta>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"></meta>
+    <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+    <!-- //Custom Theme files -->
+    <script src="http://cdn.bootcss.com/jquery/2.2.1/jquery.min.js"></script>
+    <script src="http://cdn.bootcss.com/jquery.form/3.51/jquery.form.min.js"></script>
+    <link href="http://cdn.bootcss.com/bootstrap/3.1.1/css/bootstrap.min.css" rel="stylesheet"></link>
+    <script src="http://cdn.bootcss.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+    <link href="css/style.css" type="text/css" rel="stylesheet" media="all"></link>
+    <!-- js -->
+
+    <link href="http://cdn.bootcss.com/toastr.js/latest/toastr.min.css" rel="stylesheet"></link>
+    <script src="http://cdn.bootcss.com/toastr.js/latest/toastr.min.js"></script>
+    <script src="js/imagezoom.js"></script>
+    <!-- //js -->
+    <!-- cart -->
+    <script src="js/simpleCart.min.js"> </script>
+    <!-- cart -->
+    <!-- FlexSlider -->
+    <script src="js/jquery.flexslider.js"></script>
+    <link rel="stylesheet" href="css/flexslider.css" type="text/css" media="screen" />
+    <style type="text/css">
+        .gw_num{border: 1px solid #dbdbdb;width: 110px;line-height: 26px;overflow: hidden;}
+        .gw_num em{display: block;height: 26px;width: 26px;float: left;color: #7A7979;border-right: 1px solid #dbdbdb;text-align: center;cursor: pointer;font-style:normal;}
+        .gw_num .num{display: block;float: left;text-align: center;width: 52px;font-style: normal;font-size: 14px;line-height: 24px;border: 0;}
+        .gw_num em.add{float: right;border-right: 0;border-left: 1px solid #dbdbdb;}
+    </style>
+    <script>
+        // Can also be used with $(document).ready()
+        $(window).load(function() {
+            $('.flexslider').flexslider({
+                animation: "slide",
+                controlNav: "thumbnails"
+            });
+        });
+    </script>
+    <!--//FlexSlider -->
+    <script src="js/show.js"></script>
+    <script src="js/logout.js"></script>
+</head>
+<body>
+<!--header-->
+<div class="header">
+    <div class="container">
+        <nav class="navbar navbar-default" role="navigation" style="width:76%">
+            <div class="navbar-header">
+                <h1 class="navbar-brand"><a  href=".">DDBuy</a></h1>
+            </div>
+            <!--navbar-header-->
+
+        </nav>
+        <div class="header-info" >
+            <div class="header-right search-box">
+                <a href="#"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></a>
+                <div class="search">
+                    <form class="navbar-form" action="products">
+                        <input type="text" name="keyword" class="form-control"></input>
+                        <input type="text" name="page" class="form-control" value="1" style="display:none"></input>
+                        <button type="submit" class="btn btn-default" aria-label="Left Align">
+                            搜索
+                        </button>
+                    </form>
+                </div>
+            </div>
+            <div class="header-right login">
+                <a href="order"><span class="glyphicon glyphicon-user" aria-hidden="true"></span></a>
+            </div>
+            <div class="header-right cart">
+                <a href="shopCart"><span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span></a>
+            </div>
+            <div class="header-right cart" style="display: none;" id="logout">
+                <a href="logout"><span class="glyphicon glyphicon-log-out" aria-hidden="true" ></span></a>
+            </div>
+        </div>
+        <div class="clearfix"> </div>
+    </div>
+</div>
+<!--//header-->
+<!--//single-page-->
+<div class="single">
+    <div class="container">
+        <div class="single-grids">
+            <div class="col-md-4 single-grid">
+                <div class="flexslider">
+                    <ul class="slides">
+                        <li data-thumb="images/s1.png">
+                            <div class="thumb-image"><img id="thum" src="#" data-imagezoom="true" class="img-responsive"></img></div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-md-4 single-grid simpleCart_shelfItem">
+                <h3 id="title">#</h3>
+                <br></br>
+                <div class="galry">
+                    <div class="prices"><h5 id="price" class="item_price">0</h5></div>
+                    <div class="clearfix"></div>
+                </div>
+                <br></br>
+                <form class="form-group" id="addToCart" method="get">
+                    <p class="qty"> 购买数量 :  </p>
+                    <div class="gw_num"><em class="sub">－</em><input type="text" value="1" name="amount" class="num"/><em class="add">＋</em></div>
+                    <input id="product_id" type="text" name="product_id" style="display:none"></input>
+                    <div class="btn_form"><button class="add-cart item_add" type="submit">加入购物车</button></div>
+                </form>
+                <div class="tag">
+                    <p id="catalog">商品分类:#</p>
+                    <p id="tag">商品标签: </p>
+                </div>
+            </div>
+            <div class="clearfix"> </div>
+        </div>
+    </div>
+</div>
+<!-- collapse -->
+<div class="collpse tabs">
+    <div class="container">
+        <div class="panel-group collpse" id="accordion" role="tablist" aria-multiselectable="true">
+            <div class="panel panel-default">
+                <div class="panel-heading" role="tab" id="headingOne">
+                    <h4 class="panel-title">
+                        <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">商品详情</a>
+                    </h4>
+                </div>
+                <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
+                    <div id="detail" class="panel-body" align="center">
+                    </div>
+                </div>
+            </div>
+            <div class="panel panel-default">
+                <div class="panel-heading" role="tab" id="headingTwo">
+                    <h4 class="panel-title">
+                        <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                            additional information
+                        </a>
+                    </h4>
+                </div>
+                <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+                    <div class="panel-body">
+                        Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+                    </div>
+                </div>
+            </div>
+            <div class="panel panel-default">
+                <div class="panel-heading" role="tab" id="headingThree">
+                    <h4 class="panel-title">
+                        <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                            reviews (5)
+                        </a>
+                    </h4>
+                </div>
+                <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
+                    <div class="panel-body">
+                        Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+                    </div>
+                </div>
+            </div>
+            <div class="panel panel-default">
+                <div class="panel-heading" role="tab" id="headingFour">
+                    <h4 class="panel-title">
+                        <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                            help
+                        </a>
+                    </h4>
+                </div>
+                <div id="collapseFour" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFour">
+                    <div class="panel-body">
+                        Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--//collapse -->
+<!--related-products-->
+<div class="related-products">
+    <div class="container">
+        <h3>Related Products</h3>
+        <div class="product-model-sec single-product-grids">
+            <div class="product-grid single-product">
+                <a href="single.html">
+                    <div class="more-product"><span> </span></div>
+                    <div class="product-img b-link-stripe b-animate-go  thickbox">
+                        <img src="images/m1.png" class="img-responsive" alt=""></img>
+                        <div class="b-wrapper">
+                            <h4 class="b-animate b-from-left  b-delay03">
+                                <button>View</button>
+                            </h4>
+                        </div>
+                    </div>
+                </a>
+                <div class="product-info simpleCart_shelfItem">
+                    <div class="product-info-cust prt_name">
+                        <h4>Product #1</h4>
+                        <span class="item_price">$2000</span>
+                        <div class="ofr">
+                            <p class="pric1"><del>$2300</del></p>
+                            <p class="disc">[15% Off]</p>
+                        </div>
+                        <div class="clearfix"> </div>
+                    </div>
+                </div>
+            </div>
+            <div class="product-grid single-product">
+                <a href="single.html">
+                    <div class="more-product"><span> </span></div>
+                    <div class="product-img b-link-stripe b-animate-go  thickbox">
+                        <img src="images/m2.png" class="img-responsive" alt=""></img>
+                        <div class="b-wrapper">
+                            <h4 class="b-animate b-from-left  b-delay03">
+                                <button>View</button>
+                            </h4>
+                        </div>
+                    </div>
+                </a>
+                <div class="product-info simpleCart_shelfItem">
+                    <div class="product-info-cust prt_name">
+                        <h4>Product #1</h4>
+                        <span class="item_price">$2000</span>
+                        <div class="ofr">
+                            <p class="pric1"><del>$2300</del></p>
+                            <p class="disc">[15% Off]</p>
+                        </div>
+                        <div class="clearfix"> </div>
+                    </div>
+                </div>
+            </div>
+            <div class="product-grid single-product">
+                <a href="single.html">
+                    <div class="more-product"><span> </span></div>
+                    <div class="product-img b-link-stripe b-animate-go  thickbox">
+                        <img src="images/m3.png" class="img-responsive" alt=""></img>
+                        <div class="b-wrapper">
+                            <h4 class="b-animate b-from-left  b-delay03">
+                                <button>View</button>
+                            </h4>
+                        </div>
+                    </div>
+                </a>
+                <div class="product-info simpleCart_shelfItem">
+                    <div class="product-info-cust prt_name">
+                        <h4>Product #1</h4>
+                        <span class="item_price">$2000</span>
+                        <div class="ofr">
+                            <p class="pric1"><del>$2300</del></p>
+                            <p class="disc">[15% Off]</p>
+                        </div>
+                        <div class="clearfix"> </div>
+                    </div>
+                </div>
+            </div>
+            <div class="product-grid single-product">
+                <a href="single.html">
+                    <div class="more-product"><span> </span></div>
+                    <div class="product-img b-link-stripe b-animate-go  thickbox">
+                        <img src="images/m4.png" class="img-responsive" alt=""></img>
+                        <div class="b-wrapper">
+                            <h4 class="b-animate b-from-left  b-delay03">
+                                <button>view</button>
+                            </h4>
+                        </div>
+                    </div>
+                </a>
+                <div class="product-info simpleCart_shelfItem">
+                    <div class="product-info-cust prt_name">
+                        <h4>Product #1</h4>
+                        <span class="item_price">$2000</span>
+                        <div class="ofr">
+                            <p class="pric1"><del>$2300</del></p>
+                            <p class="disc">[15% Off]</p>
+                        </div>
+                        <div class="clearfix"> </div>
+                    </div>
+                </div>
+            </div>
+            <div class="clearfix"> </div>
+        </div>
+    </div>
+</div>
+<!--related-products-->
+<!--footer-->
+<div class="footer">
+    <div class="container">
+        <div class="footer-grids">
+            <div class="col-md-2 footer-grid">
+                <h4>公司</h4>
+                <ul>
+                    <li><a href="products.html">产品</a></li>
+                    <li><a href="#">团队</a></li>
+                    <li><a href="#">大事件</a></li>
+                </ul>
+            </div>
+            <div class="col-md-2 footer-grid">
+                <h4>服务</h4>
+                <ul>
+                    <li><a href="#">支持</a></li>
+                    <li><a href="#">返修</a></li>
+                    <li><a href="contact.html">联系客服</a></li>
+                </ul>
+            </div>
+            <div class="col-md-3 footer-grid">
+                <h4>订单及退货</h4>
+                <ul>
+                    <li><a href="#">订单状态</a></li>
+                    <li><a href="#">购买服务条款</a></li>
+                    <li><a href="#">退货服务条款</a></li>
+                </ul>
+            </div>
+            <div class="col-md-2 footer-grid">
+                <h4>法律信息</h4>
+                <ul>
+                    <li><a href="#">隐私条款</a></li>
+                    <li><a href="#">社会责任条款</a></li>
+                </ul>
+            </div>
+            <div class="col-md-3 footer-grid icons">
+                <h4>联系我们</h4>
+                <ul>
+                    <li><a href="#"><img src="images/i1.png" alt=""></img>Facebook</a></li>
+                    <li><a href="#"><img src="images/i2.png" alt=""></img>Twitter</a></li>
+                    <li><a href="#"><img src="images/i3.png" alt=""></img>Google-plus</a></li>
+                    <li><a href="#"><img src="images/i4.png" alt=""></img>Pinterest</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="clearfix"></div>
+    </div>
+</div>
+<!--footer-->
+<div class="footer-bottom">
+    <div class="container">
+        <p>Copyright &copy; 2017.DDBuy All rights reserved.</p>
+    </div>
+</div>
+</body>
+</html>

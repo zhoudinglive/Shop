@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Home</title>
+    <!-- Custom Theme files -->
+    <meta name="查看port" content="width=device-width, initial-scale=1"></meta>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" ></meta>
+    <meta name="keywords" content="" ></meta>
+    <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+    <!-- //Custom Theme files -->
+    <script src="http://cdn.bootcss.com/jquery/2.2.1/jquery.min.js"></script>
+    <link href="http://cdn.bootcss.com/bootstrap/3.1.1/css/bootstrap.min.css" rel="stylesheet"></link>
+    <script src="http://cdn.bootcss.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+    <link href="css/style.css" type="text/css" rel="stylesheet" media="all"></link>
+    <script src="js/recommend.js"></script>
+    <!-- cart -->
+    <script src="js/simpleCart.min.js"> </script>
+    <script src="js/logout.js"></script>
+    <!-- cart -->
+</head>
+<body>
+<!--header-->
+<div class="header">
+    <div class="container">
+        <nav class="navbar navbar-default" role="navigation" style="width:76%">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <h1 class="navbar-brand"><a  href="">DDBuy</a></h1>
+            </div>
+            <!--navbar-header-->
+
+        </nav>
+        <div class="header-info">
+            <div class="header-right search-box">
+                <a href="#"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></a>
+                <div class="search">
+                    <form class="navbar-form" action="products">
+                        <input type="text" name="keyword" class="form-control"></input>
+                        <input type="text" name="page" class="form-control" value="1" style="display:none"></input>
+                        <button type="submit" class="btn btn-default" aria-label="Left Align">
+                            搜索
+                        </button>
+                    </form>
+                </div>
+            </div>
+            <div class="header-right login">
+                <a href="order"><span class="glyphicon glyphicon-user" aria-hidden="true"></span></a>
+            </div>
+            <div class="header-right cart">
+                <a href="shopCart"><span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span></a>
+            </div>
+            <div class="header-right cart" style="display: none;" id="logout">
+                <a href="logout"><span class="glyphicon glyphicon-log-out" aria-hidden="true" ></span></a>
+            </div>
+        </div>
+        <div class="clearfix"> </div>
+    </div>
+</div>
+<!--//header-->
+<!--banner-->
+<div class="banner">
+    <div class="container">
+        <h2 class="hdng">DDBuy <span>在线商城</span></h2>
+        <p>精选全球好货</p>
+        <a href="show?pid=1252">现在购买</a>
+        <div class="banner-text">
+            <img src="images/mi.png" alt=""></img>
+        </div>
+    </div>
+
+</div>
+<!--//banner-->
+<!--gallery-->
+<div class="gallery">
+    <div class="container">
+        <div class="gallery-grids">
+            <div class="col-md-8 gallery-grid glry-one">
+                <a href="show?pid=50"><img src="https://img11.360buyimg.com/cms/jfs/t2665/237/2720460637/246782/64c81662/57709cc4N51487c11.jpg" class="img-responsive" alt=""></img>
+                    <div class="gallery-info" style="bottom: 20%">
+                        <p><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span> 查看</p>
+                        <a class="shop" href="show?pid=50">现在购买</a>
+                        <div class="clearfix"> </div>
+                    </div>
+                </a>
+                <div class="galy-info">
+                    <p>New Macbook</p>
+                    <div class="galry">
+                        <div class="prices">
+                            <h5 class="item_price">￥9888</h5>
+                        </div>
+                        <div class="rating">
+                            <span>☆</span>
+                            <span>☆</span>
+                            <span>☆</span>
+                            <span>☆</span>
+                        </div>
+                        <div class="clearfix"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 gallery-grid glry-two">
+                <a href="show?pid=5415"><img src="https://img12.360buyimg.com/n1/s450x450_jfs/t3193/79/837808277/234216/c8dc0e6c/57bfe096Nff0ac3a1.jpg
+" class="img-responsive" alt=""></img>
+                    <div class="gallery-info galrr-info-two" style="bottom: 17%;">
+                        <p><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span> 查看</p>
+                        <a class="shop" href="show?pid=5415">现在购买</a>
+                        <div class="clearfix"> </div>
+                    </div>
+                </a>
+                <div class="galy-info">
+                    <p>华硕玩家国度ROG GT51CA</p>
+                    <div class="galry">
+                        <div class="prices">
+                            <h5 class="item_price">￥19999</h5>
+                        </div>
+                        <div class="rating">
+                            <span>☆</span>
+                            <span>☆</span>
+                            <span>☆</span>
+                        </div>
+                        <div class="clearfix"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 gallery-grid ">
+                <a href="show?pid=7749"><img src="https://img14.360buyimg.com/n1/s450x450_jfs/t3457/335/2158323307/437481/f8fdf0fe/584a7a5dN39c2ef36.jpg
+" class="img-responsive" alt=""></img>
+                    <div class="gallery-info">
+                        <p><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span> 查看</p>
+                        <a class="shop" href="show?pid=7749">现在购买</a>
+                        <div class="clearfix"> </div>
+                    </div>
+                </a>
+                <div class="galy-info">
+                    <p>小米Mix概念手机</p>
+                    <div class="galry">
+                        <div class="prices">
+                            <h5 class="item_price">￥3999</h5>
+                        </div>
+                        <div class="rating">
+                            <span>☆</span>
+                            <span>☆</span>
+                            <span>☆</span>
+                            <span>☆</span>
+                        </div>
+                        <div class="clearfix"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-3 gallery-grid ">
+                <a href="show?pid=7784"><img src="https://img11.360buyimg.com/n1/s450x450_jfs/t3484/105/1089919987/65981/a91824ec/581bf080N4341d35f.jpg
+" class="img-responsive" alt=""></img>
+                    <div class="gallery-info">
+                        <p><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span> 查看</p>
+                        <a class="shop" href="show?pid=7784">现在购买</a>
+                        <div class="clearfix"> </div>
+                    </div>
+                </a>
+                <div class="galy-info">
+                    <p>Mate9</p>
+                    <div class="galry">
+                        <div class="prices">
+                            <h5 class="item_price">￥3899</h5>
+                        </div>
+                        <div class="rating">
+                            <span>☆</span>
+                            <span>☆</span>
+                            <span>☆</span>
+                            <span>☆</span>
+                            <span>☆</span>
+                        </div>
+                        <div class="clearfix"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 gallery-grid ">
+                <a href="show?pid=8052"><img src="https://img14.360buyimg.com/n1/s450x450_jfs/t3259/103/1876049587/75610/dc8f6329/57d5135fNbff12c07.jpg
+" class="img-responsive" alt=""></img>
+                    <div class="gallery-info">
+                        <p><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span> 查看</p>
+                        <a class="shop" href="show?pid=8052">现在购买</a>
+                        <div class="clearfix"> </div>
+                    </div>
+                </a>
+                <div class="galy-info">
+                    <p>iphone7 Plus 128GB</p>
+                    <div class="galry">
+                        <div class="prices">
+                            <h5 class="item_price">￥6538</h5>
+                        </div>
+                        <div class="rating">
+                            <span>☆</span>
+                            <span>☆</span>
+                            <span>☆</span>
+                            <span>☆</span>
+                            <span>☆</span>
+                        </div>
+                        <div class="clearfix"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 gallery-grid ">
+                <a href="show?pid=7754"><img src="https://img14.360buyimg.com/n1/s450x450_jfs/t3544/28/568416609/135582/af801e4f/580f1296N69590b3b.jpg
+" class="img-responsive" alt=""></img>
+                    <div class="gallery-info">
+                        <p><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span> 查看</p>
+                        <a class="shop" href="show?pid=7754">现在购买</a>
+                        <div class="clearfix"> </div>
+                    </div>
+                </a>
+                <div class="galy-info">
+                    <p>Mi Note2 64GB</p>
+                    <div class="galry">
+                        <div class="prices">
+                            <h5 class="item_price">￥2799</h5>
+                        </div>
+                        <div class="rating">
+                            <span>☆</span>
+                            <span>☆</span>
+                            <span>☆</span>
+                            <span>☆</span>
+                        </div>
+                        <div class="clearfix"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 gallery-grid ">
+                <a href="show?pid=8420"><img src="https://img13.360buyimg.com/n1/s450x450_jfs/t3871/120/895515990/169829/9fc87635/58621ca8N19c652b5.jpg
+" class="img-responsive" alt=""></img>
+                    <div class="gallery-info">
+                        <p><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span> 查看</p>
+                        <a class="shop" href="show?pid=8420">现在购买</a>
+                        <div class="clearfix"> </div>
+                    </div>
+                </a>
+                <div class="galy-info">
+                    <p>SAMSUMG Glaxy S7 edge</p>
+                    <div class="galry">
+                        <div class="prices">
+                            <h5 class="item_price">￥4588</h5>
+                        </div>
+                        <div class="rating">
+                            <span>☆</span>
+                            <span>☆</span>
+                            <span>☆</span>
+                            <span>☆</span>
+                        </div>
+                        <div class="clearfix"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 gallery-grid ">
+                <a href="show?pid=776"><img src="https://img10.360buyimg.com/n1/s450x450_jfs/t2596/29/1223287599/58014/1a59aab2/57392e06N206d6846.jpg
+" class="img-responsive" alt=""></img>
+                    <div class="gallery-info">
+                        <p><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span> 查看</p>
+                        <a class="shop" href="show?pid=776">现在购买</a>
+                        <div class="clearfix"> </div>
+                    </div>
+                </a>
+                <div class="galy-info">
+                    <p>Thinkpad Carbon X1</p>
+                    <div class="galry">
+                        <div class="prices">
+                            <h5 class="item_price">￥19999</h5>
+                        </div>
+                        <div class="rating">
+                            <span>☆</span>
+                            <span>☆</span>
+                            <span>☆</span>
+                            <span>☆</span>
+
+                        </div>
+                        <div class="clearfix"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 gallery-grid ">
+                <a href="show?pid=38"><img src="https://img12.360buyimg.com/n1/s450x450_jfs/t3973/339/1229535216/116930/b59e2b5d/586f4cbaNe16cf548.jpg
+" class="img-responsive" alt=""></img>
+                    <div class="gallery-info">
+                        <p><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span> 查看</p>
+                        <a class="shop" href="show?pid=38">现在购买</a>
+                        <div class="clearfix"> </div>
+                    </div>
+                </a>
+                <div class="galy-info">
+                    <p>Macbook Pro 2016 with touchbar</p>
+                    <div class="galry">
+                        <div class="prices">
+                            <h5 class="item_price">￥13488</h5>
+                        </div>
+                        <div class="rating">
+                            <span>☆</span>
+                            <span>☆</span>
+                            <span>☆</span>
+                            <span>☆</span>
+                        </div>
+                        <div class="clearfix"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-3 gallery-grid ">
+                <a href="show?pid=5574"><img src="https://img10.360buyimg.com/n1/s450x450_jfs/t3178/348/2054358145/104460/5831a79f/57d8d9ddN7492cfc9.jpg
+" class="img-responsive" alt=""></img>
+                    <div class="gallery-info">
+                        <p><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span> 查看</p>
+                        <a class="shop" href="show?pid=5574">现在购买</a>
+                        <div class="clearfix"> </div>
+                    </div>
+                </a>
+                <div class="galy-info">
+                    <p>XPS</p>
+                    <div class="galry">
+                        <div class="prices">
+                            <h5 class="item_price">￥7499</h5>
+                        </div>
+                        <div class="rating">
+                            <span>☆</span>
+                            <span>☆</span>
+                            <span>☆</span>
+                            <span>☆</span>
+                        </div>
+                        <div class="clearfix"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--//gallery-->
+<div id="cfGallery" class="gallery" style="display:none">
+    <div class="container">
+        <h2>随便逛逛...</h2>
+        <div id="cfItems"></div>
+    </div>
+</div>
+<!--footer-->
+<div class="footer">
+    <div class="container">
+        <div class="footer-grids">
+            <div class="col-md-2 footer-grid">
+                <h4>公司</h4>
+                <ul>
+                    <li><a href="products.html">产品</a></li>
+                    <li><a href="#">团队</a></li>
+                    <li><a href="#">大事件</a></li>
+                </ul>
+            </div>
+            <div class="col-md-2 footer-grid">
+                <h4>服务</h4>
+                <ul>
+                    <li><a href="#">支持</a></li>
+                    <li><a href="#">返修</a></li>
+                    <li><a href="contact.html">联系客服</a></li>
+                </ul>
+            </div>
+            <div class="col-md-3 footer-grid">
+                <h4>订单及退货</h4>
+                <ul>
+                    <li><a href="#">订单状态</a></li>
+                    <li><a href="#">购买服务条款</a></li>
+                    <li><a href="#">退货服务条款</a></li>
+                </ul>
+            </div>
+            <div class="col-md-2 footer-grid">
+                <h4>法律信息</h4>
+                <ul>
+                    <li><a href="#">隐私条款</a></li>
+                    <li><a href="#">社会责任条款</a></li>
+                </ul>
+            </div>
+            <div class="col-md-3 footer-grid icons">
+                <h4>联系我们</h4>
+                <ul>
+                    <li><a href="#"><img src="images/i1.png" alt=""></img>Facebook</a></li>
+                    <li><a href="#"><img src="images/i2.png" alt=""></img>Twitter</a></li>
+                    <li><a href="#"><img src="images/i3.png" alt=""></img>Google-plus</a></li>
+                    <li><a href="#"><img src="images/i4.png" alt=""></img>Pinterest</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="clearfix"></div>
+    </div>
+</div>
+<!--//footer-->
+<div class="footer-bottom">
+    <div class="container">
+        <p>Copyright &copy; 2017.DDBuy All rights reserved.</p>
+    </div>
+</div>
+
+</body>
+</html>

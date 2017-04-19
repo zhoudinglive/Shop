@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>商品搜索</title>
+    <!-- Custom Theme files -->
+    <meta name="viewport" content="width=device-width, initial-scale=1"></meta>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"></meta>
+    <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+    <!-- //Custom Theme files -->
+    <script src="http://cdn.bootcss.com/jquery/2.2.1/jquery.min.js"></script>
+    <link href="http://cdn.bootcss.com/bootstrap/3.1.1/css/bootstrap.min.css" rel="stylesheet"></link>
+    <script src="http://cdn.bootcss.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+    <link href="css/style.css" type="text/css" rel="stylesheet" media="all"></link>
+    <link href="css/form.css" rel="stylesheet" type="text/css" media="all"></link>
+    <!-- js -->
+
+    <!-- //js -->
+    <!-- cart -->
+    <script src="js/simpleCart.min.js"> </script>
+    <!-- cart -->
+    <!-- the jScrollPane script -->
+    <script type="text/javascript" src="js/jquery.jscrollpane.min.js"></script>
+    <script type="text/javascript" id="sourcecode">
+        $(function()
+        {
+            $('.scroll-pane').jScrollPane();
+        });
+    </script>
+    <!-- //the jScrollPane script -->
+    <script type="text/javascript" src="js/jquery.mousewheel.js"></script>
+    <!-- the mousewheel plugin -->
+    <script src="js/products.js"></script>
+    <script src="js/logout.js"></script>
+</head>
+<body>
+<!--header-->
+<div class="header">
+    <div class="container">
+        <nav class="navbar navbar-default" role="navigation" style="width:76%">
+            <div class="navbar-header">
+                <h1 class="navbar-brand"><a  href=".">DDBuy</a></h1>
+            </div>
+            <!--navbar-header-->
+
+        </nav>
+        <div class="header-info">
+            <div class="header-right search-box">
+                <a href="#"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></a>
+                <div class="search">
+                    <form class="navbar-form" action="products">
+                        <input type="text" name="keyword" class="form-control"></input>
+                        <input type="text" name="page" class="form-control" value="1" style="display:none"></input>
+                        <button type="submit" class="btn btn-default" aria-label="Left Align">
+                            搜索
+                        </button>
+                    </form>
+                </div>
+            </div>
+            <div class="header-right login">
+                <a href="order"><span class="glyphicon glyphicon-user" aria-hidden="true"></span></a>
+            </div>
+            <div class="header-right cart">
+                <a href="shopCart"><span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span></a>
+            </div>
+            <div class="header-right cart" style="display: none;" id="logout">
+                <a href="logout"><span class="glyphicon glyphicon-log-out" aria-hidden="true" ></span></a>
+            </div>
+        </div>
+        <div class="clearfix"> </div>
+    </div>
+</div>
+<!--//header-->
+<!--products-->
+<div class="products">
+    <div class="container">
+        <h2>Product Search</h2>
+        <div class="col-md-3 rsidebar span_1_of_left">
+            <section  class="sky-form">
+                <h4><span class="glyphicon glyphicon-inbox" aria-hidden="true"></span>&nbsp;价格</h4>
+                <form class="form-inline">
+                    <input type="number" min="1" max="10000" name="" class="form-control" style="width:50px"></input>
+                    ~
+                    <input type="number" min="1" max="99999999" name="" class="form-control" style="width:50px"></input>
+                    <button type="button" class="btn btn-default">筛选</button>
+                </form>
+            </section>
+            <section  class="sky-form">
+                <h4><span class="glyphicon glyphicon-sort" aria-hidden="true"></span>&nbsp;排序</h4>
+                <div class="row">
+                    <div class="col col-4">
+                        <div class="row"><a id="default" class="btn btn-default"><span class="glyphicon glyphicon-minus-sign"></span>&nbsp;默认排序</a></div>
+                        <div class="row"><a id="saleDesc" class="btn btn-default"><span class="glyphicon glyphicon-minus-sign"></span>&nbsp;销量降序</a></div>
+                        <div class="row"><a id="saleAsc" class="btn btn-default"><span class="glyphicon glyphicon-minus-sign"></span>&nbsp;销量升序</a></div>
+                        <div class="row"><a id="scoreDesc" class="btn btn-default"><span class="glyphicon glyphicon-minus-sign"></span>&nbsp;评分降序</a></div>
+                        <div class="row"><a id="scoreAsc" class="btn btn-default"><span class="glyphicon glyphicon-minus-sign"></span>&nbsp;评分升序</a></div>
+                        <div class="row"><a id="priceDesc" class="btn btn-default"><span class="glyphicon glyphicon-minus-sign"></span>&nbsp;价格降序</a></div>
+                        <div class="row"><a id="priceAsc" class="btn btn-default"><span class="glyphicon glyphicon-minus-sign"></span>&nbsp;价格升序</a></div>
+                    </div>
+                </div>
+            </section>
+        </div>
+        <div class="col-md-9 product-model-sec">
+            <div id="product0" class="product-grid" style="height:330px">
+                <a id="link0" href="#">
+                    <div class="more-product"><span> </span></div>
+                    <div class="product-img b-link-stripe b-animate-go thickbox">
+                        <img id="thum0" class="img-responsive"></img>
+                        <div class="b-wrapper">
+                            <h4 class="b-animate b-from-left  b-delay03">
+                                <button>详情</button>
+                            </h4>
+                        </div>
+                    </div>
+                </a>
+                <div class="product-info simpleCart_shelfItem">
+                    <div class="product-info-cust prt_name">
+                        <h4 id="title0">#0</h4>
+                        <span id="price0" class="item_price">0</span>
+                        <p id="sale0" class="disc">SALE：</p>
+                        <p id="score0" class="disc">SCORE：</p>
+                        <div class="clearfix"></div>
+                    </div>
+                </div>
+            </div>
+            <div id="product1" class="product-grid" style="height:330px">
+                <a id="link1" href="#">
+                    <div class="more-product"><span> </span></div>
+                    <div class="product-img b-link-stripe b-animate-go thickbox">
+                        <img id="thum1" class="img-responsive"></img>
+                        <div class="b-wrapper">
+                            <h4 class="b-animate b-from-left  b-delay03">
+                                <button>详情</button>
+                            </h4>
+                        </div>
+                    </div>
+                </a>
+                <div class="product-info simpleCart_shelfItem">
+                    <div class="product-info-cust prt_name">
+                        <h4 id="title1">#1</h4>
+                        <span id="price1" class="item_price">0</span>
+                        <p id="sale1" class="disc">SALE：</p>
+                        <p id="score1" class="disc">SCORE：</p>
+                        <div class="clearfix"></div>
+                    </div>
+                </div>
+            </div>
+            <div id="product2" class="product-grid" style="height:330px">
+                <a id="link2" href="#">
+                    <div class="more-product"><span> </span></div>
+                    <div class="product-img b-link-stripe b-animate-go thickbox">
+                        <img id="thum2" class="img-responsive"></img>
+                        <div class="b-wrapper">
+                            <h4 class="b-animate b-from-left  b-delay03">
+                                <button>详情</button>
+                            </h4>
+                        </div>
+                    </div>
+                </a>
+                <div class="product-info simpleCart_shelfItem">
+                    <div class="product-info-cust prt_name">
+                        <h4 id="title2">#2</h4>
+                        <span id="price2" class="item_price">0</span>
+                        <p id="sale2" class="disc">SALE：</p>
+                        <p id="score2" class="disc">SCORE：</p>
+                        <div class="clearfix"></div>
+                    </div>
+                </div>
+            </div>
+            <div id="product3" class="product-grid" style="height:330px">
+                <a id="link3" href="#">
+                    <div class="more-product"><span> </span></div>
+                    <div class="product-img b-link-stripe b-animate-go thickbox">
+                        <img id="thum3" class="img-responsive"></img>
+                        <div class="b-wrapper">
+                            <h4 class="b-animate b-from-left  b-delay03">
+                                <button>详情</button>
+                            </h4>
+                        </div>
+                    </div>
+                </a>
+                <div class="product-info simpleCart_shelfItem">
+                    <div class="product-info-cust prt_name">
+                        <h4 id="title3">#3</h4>
+                        <span id="price3" class="item_price">0</span>
+                        <p id="sale3" class="disc">SALE：</p>
+                        <p id="score3" class="disc">SCORE：</p>
+                        <div class="clearfix"></div>
+                    </div>
+                </div>
+            </div>
+            <div id="product4" class="product-grid" style="height:330px">
+                <a id="link4" href="#">
+                    <div class="more-product"><span> </span></div>
+                    <div class="product-img b-link-stripe b-animate-go thickbox">
+                        <img id="thum4" class="img-responsive"></img>
+                        <div class="b-wrapper">
+                            <h4 class="b-animate b-from-left  b-delay03">
+                                <button>详情</button>
+                            </h4>
+                        </div>
+                    </div>
+                </a>
+                <div class="product-info simpleCart_shelfItem">
+                    <div class="product-info-cust prt_name">
+                        <h4 id="title4">#4</h4>
+                        <span id="price4" class="item_price">0</span>
+                        <p id="sale4" class="disc">SALE：</p>
+                        <p id="score4" class="disc">SCORE：</p>
+                        <div class="clearfix"></div>
+                    </div>
+                </div>
+            </div>
+            <div id="product5" class="product-grid" style="height:330px">
+                <a id="link5" href="#">
+                    <div class="more-product"><span> </span></div>
+                    <div class="product-img b-link-stripe b-animate-go thickbox">
+                        <img id="thum5" class="img-responsive"></img>
+                        <div class="b-wrapper">
+                            <h4 class="b-animate b-from-left  b-delay03">
+                                <button>详情</button>
+                            </h4>
+                        </div>
+                    </div>
+                </a>
+                <div class="product-info simpleCart_shelfItem">
+                    <div class="product-info-cust prt_name">
+                        <h4 id="title5">#5</h4>
+                        <span id="price5" class="item_price">0</span>
+                        <p id="sale5" class="disc">SALE：</p>
+                        <p id="score5" class="disc">SCORE：</p>
+                        <div class="clearfix"></div>
+                    </div>
+                </div>
+            </div>
+            <div id="product6" class="product-grid" style="height:330px">
+                <a id="link6" href="#">
+                    <div class="more-product"><span> </span></div>
+                    <div class="product-img b-link-stripe b-animate-go thickbox">
+                        <img id="thum6" class="img-responsive"></img>
+                        <div class="b-wrapper">
+                            <h4 class="b-animate b-from-left  b-delay03">
+                                <button>详情</button>
+                            </h4>
+                        </div>
+                    </div>
+                </a>
+                <div class="product-info simpleCart_shelfItem">
+                    <div class="product-info-cust prt_name">
+                        <h4 id="title6">#6</h4>
+                        <span id="price6" class="item_price">0</span>
+                        <p id="sale6" class="disc">SALE：</p>
+                        <p id="score6" class="disc">SCORE：</p>
+                        <div class="clearfix"></div>
+                    </div>
+                </div>
+            </div>
+            <div id="product7" class="product-grid" style="height:330px">
+                <a id="link7" href="#">
+                    <div class="more-product"><span> </span></div>
+                    <div class="product-img b-link-stripe b-animate-go thickbox">
+                        <img id="thum7" class="img-responsive"></img>
+                        <div class="b-wrapper">
+                            <h4 class="b-animate b-from-left  b-delay03">
+                                <button>详情</button>
+                            </h4>
+                        </div>
+                    </div>
+                </a>
+                <div class="product-info simpleCart_shelfItem">
+                    <div class="product-info-cust prt_name">
+                        <h4 id="title7">#7</h4>
+                        <span id="price7" class="item_price">0</span>
+                        <p id="sale7" class="disc">SALE：</p>
+                        <p id="score7" class="disc">SCORE：</p>
+                        <div class="clearfix"></div>
+                    </div>
+                </div>
+            </div>
+            <div id="product8" class="product-grid" style="height:330px">
+                <a id="link8" href="#">
+                    <div class="more-product"><span> </span></div>
+                    <div class="product-img b-link-stripe b-animate-go thickbox">
+                        <img id="thum8" class="img-responsive"></img>
+                        <div class="b-wrapper">
+                            <h4 class="b-animate b-from-left  b-delay03">
+                                <button>详情</button>
+                            </h4>
+                        </div>
+                    </div>
+                </a>
+                <div class="product-info simpleCart_shelfItem">
+                    <div class="product-info-cust prt_name">
+                        <h4 id="title8">#8</h4>
+                        <span id="price8" class="item_price">0</span>
+                        <p id="sale8" class="disc">SALE：</p>
+                        <p id="score8" class="disc">SCORE：</p>
+                        <div class="clearfix"></div>
+                    </div>
+                </div>
+            </div>
+            <div id="product9" class="product-grid" style="height:330px">
+                <a id="link9" href="#">
+                    <div class="more-product"><span> </span></div>
+                    <div class="product-img b-link-stripe b-animate-go thickbox">
+                        <img id="thum9" class="img-responsive"></img>
+                        <div class="b-wrapper">
+                            <h4 class="b-animate b-from-left  b-delay03">
+                                <button>详情</button>
+                            </h4>
+                        </div>
+                    </div>
+                </a>
+                <div class="product-info simpleCart_shelfItem">
+                    <div class="product-info-cust prt_name">
+                        <h4 id="title9">#9</h4>
+                        <span id="price9" class="item_price">0</span>
+                        <p id="sale9" class="disc">SALE：</p>
+                        <p id="score9" class="disc">SCORE：</p>
+                        <div class="clearfix"></div>
+                    </div>
+                </div>
+            </div>
+            <div id="product10" class="product-grid" style="height:330px">
+                <a id="link10" href="#">
+                    <div class="more-product"><span> </span></div>
+                    <div class="product-img b-link-stripe b-animate-go thickbox">
+                        <img id="thum10" class="img-responsive"></img>
+                        <div class="b-wrapper">
+                            <h4 class="b-animate b-from-left  b-delay03">
+                                <button>详情</button>
+                            </h4>
+                        </div>
+                    </div>
+                </a>
+                <div class="product-info simpleCart_shelfItem">
+                    <div class="product-info-cust prt_name">
+                        <h4 id="title10">#10</h4>
+                        <span id="price10" class="item_price">0</span>
+                        <p id="sale10" class="disc">SALE：</p>
+                        <p id="score10" class="disc">SCORE：</p>
+                        <div class="clearfix"></div>
+                    </div>
+                </div>
+            </div>
+            <div id="product11" class="product-grid" style="height:330px">
+                <a id="link11" href="#">
+                    <div class="more-product"><span> </span></div>
+                    <div class="product-img b-link-stripe b-animate-go thickbox">
+                        <img id="thum11" class="img-responsive"></img>
+                        <div class="b-wrapper">
+                            <h4 class="b-animate b-from-left  b-delay03">
+                                <button>详情</button>
+                            </h4>
+                        </div>
+                    </div>
+                </a>
+                <div class="product-info simpleCart_shelfItem">
+                    <div class="product-info-cust prt_name">
+                        <h4 id="title11">#11</h4>
+                        <span id="price11" class="item_price">0</span>
+                        <p id="sale11" class="disc">SALE：</p>
+                        <p id="score11" class="disc">SCORE：</p>
+                        <div class="clearfix"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="row" align="center">
+                <form class="form-inline">
+                    <span id="total" class="label label-primary">0</span>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <button id="prePage" type="button" class="btn btn-default">&lt;上一页</button>
+                    <button id="curPage" type="button" class="btn btn-link">1 / 1</button>
+                    <button id="nextPage" type="button" class="btn btn-default">下一页&gt;</button>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <input id="jumpTo" class="form-control" type="number" min="1" max="99" name="" style="width:60px"></input>
+                    <button id="doJump" type="button" class="btn btn-default">跳转</button>
+                </form>
+            </div>
+        </div>
+        <div class="clearfix"> </div>
+    </div>
+</div>
+<!--//products-->
+<!--footer-->
+<div class="footer">
+    <div class="container">
+        <div class="footer-grids">
+            <div class="col-md-2 footer-grid">
+                <h4>公司</h4>
+                <ul>
+                    <li><a href="products.html">产品</a></li>
+                    <li><a href="#">团队</a></li>
+                    <li><a href="#">大事件</a></li>
+                </ul>
+            </div>
+            <div class="col-md-2 footer-grid">
+                <h4>服务</h4>
+                <ul>
+                    <li><a href="#">支持</a></li>
+                    <li><a href="#">返修</a></li>
+                    <li><a href="contact.html">联系客服</a></li>
+                </ul>
+            </div>
+            <div class="col-md-3 footer-grid">
+                <h4>订单及退货</h4>
+                <ul>
+                    <li><a href="#">订单状态</a></li>
+                    <li><a href="#">购买服务条款</a></li>
+                    <li><a href="#">退货服务条款</a></li>
+                </ul>
+            </div>
+            <div class="col-md-2 footer-grid">
+                <h4>法律信息</h4>
+                <ul>
+                    <li><a href="#">隐私条款</a></li>
+                    <li><a href="#">社会责任条款</a></li>
+                </ul>
+            </div>
+            <div class="col-md-3 footer-grid icons">
+                <h4>联系我们</h4>
+                <ul>
+                    <li><a href="#"><img src="images/i1.png" alt=""></img>Facebook</a></li>
+                    <li><a href="#"><img src="images/i2.png" alt=""></img>Twitter</a></li>
+                    <li><a href="#"><img src="images/i3.png" alt=""></img>Google-plus</a></li>
+                    <li><a href="#"><img src="images/i4.png" alt=""></img>Pinterest</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="clearfix"></div>
+    </div>
+</div>
+<!--/div-->
+<!--//footer-->
+<div class="footer-bottom">
+    <div class="container">
+        <p>Copyright &copy; 2017.DDBuy All rights reserved.</p>
+    </div>
+</div>
+</body>
+</html>
